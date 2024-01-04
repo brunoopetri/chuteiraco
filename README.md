@@ -1,66 +1,65 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="https://img.shields.io/badge/authors-brunoopetri--marcust%C3%B9lio-red" alt="author"> 
+  <img src="https://img.shields.io/badge/vue.js-3!-blue" alt="vue.js">
+  <img src="https://img.shields.io/badge/laravel-10.X-blue" alt="laravel">
+  <img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat" alt="contributions">
+  <a href=""><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<h2 align="center">The Chuteiraço web application</h2>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+ ![chuteiraco](https://github.com/brunoopetri/chuteiraco/assets/98756562/4eaa05f5-1efc-49c0-bee6-e6d57c9c4fec)
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+   The web application provides a comprehensive experience, from creating a football match to player login and registration, team formation, venue details, and confirmation.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+   This project is under development and will be built using Vue.js for the front-end and Laravel for the back-end.
+   To follow the workflow, click **[here](https://github.com/brunoopetri/chuteiraco/projects?query=is%3Aopen)**.
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Main entities of the system:
 
-### Premium Partners
+* User: Refers to the individual who will use the application to schedule soccer matches.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+* Player: Refers to the individual who will participate in the soccer match.
 
-## Contributing
+* Match: Refers to the soccer match that will be scheduled through the application.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+* Location: Refers to the place where the soccer match will take place.
 
-## Code of Conduct
+* Team: Refers to the soccer team that will participate in the match.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Relationships:
 
-## Security Vulnerabilities
+* A user can register as a player.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+* A player can participate in a match.
 
-## License
+* A match can be scheduled at a location.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+* A match can have two teams.
+
+### System functionalities:
+
+* User login: The user will be able to log in to the application using their username and password.
+
+* Player registration: The user will be able to register as a player by providing personal information such as name, email, and phone number.
+
+* Match scheduling: The user will be able to schedule a match by providing details such as date, time, location, and the minimum number of players.
+
+* Match payment: The user will be able to pay the match fee using PayPal.
+
+* Match confirmation: The user will be able to confirm their attendance at the match.
+
+* Team selection: The application will choose the teams for the match.
+
+
+
+
+<p align="center">
+<a href="https://vuejs.org/" target="_blank"><img src="https://github.com/brunoopetri/chuteiraco/assets/98756562/b9fb0ca9-4bf6-42cb-8c61-4d5b129fd84b" width="33" alt="Vue.js Logo"></a>
+<a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="96" alt="Laravel Logo"></a>
+</p>
