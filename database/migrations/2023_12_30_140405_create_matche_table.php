@@ -16,10 +16,14 @@ return new class extends Migration
             $table->string('active');            
             $table->date('date');
             $table->string('location');
+            $table->unsignedBigInteger('team_id')->nullable(); // Foreign key
             $table->unsignedInteger('minimum_players');            
             $table->time('start_time');
             $table->time('end_time');
             $table->timestamps();
+
+            // Foreign key referencing the 'teams' table with ON DELETE CASCADE
+            $table->foreign('team_id')->references('id')->on('teams')->onDelete('CASCADE');
         });
     }
 
