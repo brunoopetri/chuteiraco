@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/authors-brunoopetri--marcust%C3%B9lio-red" alt="author"> 
-  <img src="https://img.shields.io/badge/vue.js-3!-blue" alt="vue.js">
-  <img src="https://img.shields.io/badge/laravel-10.X-blue" alt="laravel">
-  <img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat" alt="contributions">
-  <a href=""><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <a href="https://www.linkedin.com/in/brunoopetri"><img src="https://img.shields.io/badge/authors-brunoopetri--marcust%C3%B9lio-red" alt="author"> 
+  <a href="https://vuejs.org/"><img src="https://img.shields.io/badge/vue.js-3!-blue" alt="vue.js">
+  <a href="https://laravel.com/"><img src="https://img.shields.io/badge/laravel-10.X-blue" alt="laravel">
+  <a href="https://github.com/brunoopetri"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat" alt="contributions">
+  <a href="https://opensource.org/license/mit/"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
 
