@@ -18,11 +18,11 @@ return new class extends Migration
             $table->time('start_time');
             $table->time('end_time');
             $table->string('status');
-            $table->unsignedBigInteger('team_id'); // Foreign key
+            $table->unsignedBigInteger('location_id'); // Foreign key for locations
             $table->timestamps();
 
-            // Foreign key referencing the 'teams' table with ON DELETE CASCADE
-            $table->foreign('team_id')->references('id')->on('teams')->onDelete('CASCADE');
+            // Foreign key referencing the 'locations' table with ON DELETE CASCADE
+            $table->foreign('location_id')->references('id')->on('locations')->onDelete('CASCADE');
         });
     }
 
