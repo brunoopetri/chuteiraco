@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('players', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedBigInteger('user_id'); // Add foreign key for users
+            $table->unsignedBigInteger('user_role_id'); // Add foreign key for user_roles
             $table->timestamps();
 
             // Foreign key referencing the 'users' table with ON DELETE CASCADE
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_role_id')->references('id')->on('user_roles')->onDelete('cascade');
         });
     }
 
