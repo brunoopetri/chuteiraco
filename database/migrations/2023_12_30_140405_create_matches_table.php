@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('matche', function (Blueprint $table) {
-            $table->id();
-            $table->string('active');            
-            $table->date('date');
+        Schema::create('matches', function (Blueprint $table) {
+            $table->id();            
             $table->string('location');
-            $table->unsignedBigInteger('team_id')->nullable(); // Foreign key
-            $table->unsignedInteger('minimum_players');            
+            $table->date('date');            
             $table->time('start_time');
             $table->time('end_time');
+            $table->string('status');
+            $table->unsignedBigInteger('team_id'); // Foreign key
             $table->timestamps();
 
             // Foreign key referencing the 'teams' table with ON DELETE CASCADE

@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('phoneusers', function (Blueprint $table) {
+        Schema::create('phones', function (Blueprint $table) {
             $table->id();
-            $table->string('phone1');
-            $table->string('phone2')->nullable();
-            $table->unsignedBigInteger('users_id'); // Add foreign key for users            
+            $table->string('phone');
+            $table->unsignedBigInteger('user_id'); // Add foreign key for users            
             $table->timestamps();
 
             // Foreign key referencing the 'users' table with ON DELETE CASCADE
-            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
