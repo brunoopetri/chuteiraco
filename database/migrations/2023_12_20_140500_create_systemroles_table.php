@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -11,15 +12,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('players', function (Blueprint $table) {
+        Schema::create('systemroles', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->unsignedBigInteger('user_role_id'); // Add foreign key for user_roles
+            $table->string('name')->unique();
             $table->timestamps();
-
-            // Foreign key referencing the 'users' table with ON DELETE CASCADE
-            $table->foreign('user_role_id')->references('id')->on('user_roles')->onDelete('cascade');
         });
+
+        // Insert initial data
+        DB::table('systemroles')->insert([
+            ['name' => 'adm'],
+            ['name' => 'dev'],
+            ['name' => 'user'],
+        ]);
     }
 
     /**
@@ -27,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('players');
+        Schema::dropIfExists('systemroles');
     }
 };

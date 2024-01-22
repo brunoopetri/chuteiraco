@@ -1,8 +1,8 @@
 <p align="center">
-  <a href="https://www.linkedin.com/in/brunoopetri"><img src="https://img.shields.io/badge/authors-brunoopetri--marcust%C3%B9lio-red" alt="author"> 
-  <a href="https://vuejs.org/"><img src="https://img.shields.io/badge/vue.js-3!-blue" alt="vue.js">
-  <a href="https://laravel.com/"><img src="https://img.shields.io/badge/laravel-10.X-blue" alt="laravel">
-  <a href="https://github.com/brunoopetri"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat" alt="contributions">
+  <a href="https://www.linkedin.com/in/brunoopetri"><img src="https://img.shields.io/badge/authors-brunoopetri--marcust%C3%B9lio-red" alt="author"></a> 
+  <a href="https://vuejs.org/"><img src="https://img.shields.io/badge/vue.js-3!-blue" alt="vue.js"></a>
+  <a href="https://laravel.com/"><img src="https://img.shields.io/badge/laravel-10.X-blue" alt="laravel"></a>
+  <a href="https://github.com/brunoopetri"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat" alt="contributions"></a>
   <a href="https://opensource.org/license/mit/"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
@@ -42,24 +42,22 @@
 
 * A match can have two teams.
 
-### System functionalities:
+### System Features:
 
-* User login: The user will be able to log in to the application using their username and password.
+* Match Scheduling.
 
-* Player registration: The user will be able to register as a player by providing personal information such as name, email, and phone number.
+* Team Management.
 
-* Match scheduling: The user will be able to schedule a match by providing details such as date, time, location, and the minimum number of players.
+* Statistics Viewing
 
-* Match payment: The user will be able to pay the match fee using PayPal.
+* Integration with a Payment System.
 
-* Match confirmation: The user will be able to confirm their attendance at the match.
+### System Behaviors:
 
-* Team selection: The application will choose the teams for the match.
+* The system should allow users to schedule matches, defining the date, time, and location.
+  
+* The system should allow users to manage teams, including adding and removing players.
+  
+* The system should allow users to view match and player statistics.
 
-
-
-
-<p align="center">
-<a href="https://vuejs.org/" target="_blank"><img src="https://github.com/brunoopetri/chuteiraco/assets/98756562/b9fb0ca9-4bf6-42cb-8c61-4d5b129fd84b" width="33" alt="Vue.js Logo"></a>
-<a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="96" alt="Laravel Logo"></a>
-</p>
+* The system should allow users to pay to participate in matches through an integrated payment system.

@@ -11,18 +11,25 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('phones', function (Blueprint $table) {
+        Schema::create('player_position', function (Blueprint $table) {
             $table->id();
-            $table->string('phone');
+            
+            // Foreign key for players
+            $table->foreignId('player_team_id')->constrained('player_team');
+            
+            // Foreign key for positions
+            $table->foreignId('position_id')->constrained('positions');
+            
+            // Unique constraint combining both foreign keys
+            $table->unique(['player_team_id', 'position_id']);
 
-            // Foreign key for users
-            $table->foreignId('user_id')->constrained('users');
-                        
             // Timestamps for created_at and updated_at
             $table->timestamps();
 
             // Soft Deletes
             $table->softDeletes();
+
+            
         });
     }
 
@@ -31,6 +38,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('phones');
+        Schema::dropIfExists('player_positions');
     }
 };

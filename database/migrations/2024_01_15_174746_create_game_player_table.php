@@ -11,13 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('phones', function (Blueprint $table) {
+        Schema::create('game_player', function (Blueprint $table) {
             $table->id();
-            $table->string('phone');
+            
+            // Foreign key for games
+            $table->foreignId('game_team_id')->constrained('game_team');
+            
+            // Foreign key for player_role_users
+            $table->foreignId('player_position_id')->constrained('player_position');
+            
+            // Unique constraint combining both foreign keys
+            $table->unique(['game_team_id', 'player_position_id']);
 
-            // Foreign key for users
-            $table->foreignId('user_id')->constrained('users');
-                        
             // Timestamps for created_at and updated_at
             $table->timestamps();
 
@@ -31,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('phones');
+        Schema::dropIfExists('game_player');
     }
 };

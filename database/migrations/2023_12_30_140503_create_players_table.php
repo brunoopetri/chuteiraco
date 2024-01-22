@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('player_team_status', function (Blueprint $table) {
+        Schema::create('players', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('player_id'); 
-            $table->string('confirmation_status'); 
-            $table->foreign('player_id')->references('id')->on('players')->onDelete('cascade'); 
+
+            // Add foreign key for users
+            $table->foreignId('user_id')->constrained('users');
+            
+            // Timestamps for created_at and updated_at
             $table->timestamps();
         });
     }
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('player_team_status');
+        Schema::dropIfExists('players');
     }
 };

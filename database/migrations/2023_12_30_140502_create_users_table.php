@@ -12,17 +12,26 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
+            // Auto-incremental primary key
             $table->id();
+
+            // User name
             $table->string('name');
+
+            // Unique email address
             $table->string('email')->unique();
+
+            // Nullable timestamp for email verification
             $table->timestamp('email_verified_at')->nullable();
+
+            // User password
             $table->string('password');
+
+            // Laravel's built-in remember token for "remember me" functionality
             $table->rememberToken();
-            $table->unsignedBigInteger('system_role_id'); // Add foreign key for user_roles
+
+            // Timestamps for created_at and updated_at
             $table->timestamps();
-            
-            // Foreign key referencing the 'user_roles' table with ON DELETE CASCADE
-            $table->foreign('system_role_id')->references('id')->on('system_roles')->onDelete('CASCADE');
         });
     }
 
@@ -31,6 +40,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        // Drop the 'users' table if it exists
         Schema::dropIfExists('users');
     }
 };
