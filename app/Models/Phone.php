@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class SystemRole extends Model
+class Phone extends Model
 {
     use HasFactory, SoftDeletes;
 
@@ -16,14 +16,15 @@ class SystemRole extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
+        'phone',
+        'user_id',
     ];
 
     /**
-     * The users that belong to the systemrole.
+     * Get the user that owns the phone.
      */
-    public function users()
+    public function user()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsTo(User::class);
     }
 }

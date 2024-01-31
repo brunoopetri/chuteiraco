@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class SystemRole extends Model
+class Game extends Model
 {
     use HasFactory, SoftDeletes;
 
@@ -16,14 +16,17 @@ class SystemRole extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
+        'date',
+        'start_time',
+        'end_time',
+        'status',
     ];
 
     /**
-     * The users that belong to the systemrole.
+     * Get the places associated with the game.
      */
-    public function users()
+    public function places()
     {
-        return $this->belongsToMany(User::class);
+        return $this->hasMany(Place::class);
     }
 }

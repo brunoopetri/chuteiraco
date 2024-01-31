@@ -11,12 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('players', function (Blueprint $table) {
+        Schema::create('group_user', function (Blueprint $table) {
             $table->id();
-
-            // Add foreign key for users
+            
+            // Foreign keys referencing the 'players' and 'systemrole_user' tables
+            $table->foreignId('group_id')->constrained('groups');
             $table->foreignId('user_id')->constrained('users');
             
+            // Unique constraint combining both foreign keys
+            $table->unique(['user_id', 'group_id']);
+
             // Timestamps for created_at and updated_at
             $table->timestamps();
         });
@@ -27,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('players');
+        Schema::dropIfExists('group_user');
     }
 };

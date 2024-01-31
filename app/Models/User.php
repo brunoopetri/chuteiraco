@@ -4,13 +4,16 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
+
 
     /**
      * The attributes that are mass assignable.
@@ -43,8 +46,35 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
     
+    /**
+     * Get the system roles associated with the user.
+     */
     public function systemRoles()
     {
         return $this->belongsToMany(SystemRole::class);
+    }
+
+    /**
+     * Get the phone records associated with the user.
+     */
+    public function phones()
+    {
+        return $this->hasMany(Phone::class);
+    }
+
+    /**
+     * The groups that the user belongs to.
+     */
+    public function groups()
+    {
+        return $this->belongsToMany(Group::class);
+    }
+
+    /**
+     * Get the grouprole that the user is associated with.
+     */
+    public function grouprole()
+    {
+        return $this->belongsTo(GroupRole::class);
     }
 }

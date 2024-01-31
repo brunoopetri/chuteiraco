@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -12,21 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('systemroles', function (Blueprint $table) {
+        Schema::create('groups', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
+            $table->string('name');
             $table->timestamps();
 
             // Soft Deletes
             $table->softDeletes();
         });
-
-        // Insert initial data
-        DB::table('systemroles')->insert([
-            ['name' => 'adm'],
-            ['name' => 'dev'],
-            ['name' => 'user'],
-        ]);
     }
 
     /**
@@ -34,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('systemroles');
+        Schema::dropIfExists('groups');
     }
 };

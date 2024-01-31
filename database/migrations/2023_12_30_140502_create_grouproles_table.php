@@ -12,9 +12,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('systemroles', function (Blueprint $table) {
+        Schema::create('grouproles', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
+            
+            // Timestamps for created_at and updated_at
             $table->timestamps();
 
             // Soft Deletes
@@ -22,10 +24,9 @@ return new class extends Migration
         });
 
         // Insert initial data
-        DB::table('systemroles')->insert([
+        DB::table('grouproles')->insert([
             ['name' => 'adm'],
-            ['name' => 'dev'],
-            ['name' => 'user'],
+            ['name' => 'player'],
         ]);
     }
 
@@ -34,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('systemroles');
+        Schema::dropIfExists('grouproles');
     }
 };

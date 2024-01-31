@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class SystemRole extends Model
+class GroupRole extends Model
 {
     use HasFactory, SoftDeletes;
 
@@ -20,10 +20,10 @@ class SystemRole extends Model
     ];
 
     /**
-     * The users that belong to the systemrole.
+     * Get the users associated with the grouprole.
      */
     public function users()
     {
-        return $this->belongsToMany(User::class);
+        return $this->hasMany(User::class);
     }
 }

@@ -30,8 +30,14 @@ return new class extends Migration
             // Laravel's built-in remember token for "remember me" functionality
             $table->rememberToken();
 
+            // Foreign key for grouproles
+            $table->foreignId('grouprole_id')->constrained('grouproles');
+
             // Timestamps for created_at and updated_at
             $table->timestamps();
+
+            // Soft Deletes
+            $table->softDeletes();
         });
     }
 

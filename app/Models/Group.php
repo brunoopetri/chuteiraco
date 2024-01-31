@@ -4,12 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class SystemRole extends Model
+class Group extends Model
 {
-    use HasFactory, SoftDeletes;
-
+    use HasFactory;
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -20,7 +19,7 @@ class SystemRole extends Model
     ];
 
     /**
-     * The users that belong to the systemrole.
+     * The users that belong to the group.
      */
     public function users()
     {

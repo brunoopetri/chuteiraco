@@ -11,18 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('player_team', function (Blueprint $table) { 
+        Schema::create('game_player', function (Blueprint $table) {
             $table->id();
-            $table->boolean('confirmation_status');
             
-            // Foreign key for player_systemrole
-            $table->foreignId('player_systemrole_id')->constrained('player_systemrole');
+            // Foreign key for games
+            $table->foreignId('game_team_id')->constrained('game_team');
             
-            // Foreign key for teams
-            $table->foreignId('team_id')->constrained('teams'); 
+            // Foreign key for player_role_users
+            $table->foreignId('group_id')->constrained('groups');
             
             // Unique constraint combining both foreign keys
-            $table->unique(['player_systemrole_id', 'team_id']);
+            $table->unique(['game_team_id', 'group_id']);
 
             // Timestamps for created_at and updated_at
             $table->timestamps();
@@ -37,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('player_team');
+        Schema::dropIfExists('game_player');
     }
 };

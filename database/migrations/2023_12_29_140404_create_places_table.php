@@ -17,6 +17,10 @@ return new class extends Migration
             $table->string('address');
             $table->integer('capacity')->nullable(); // Allow for optional capacity
             $table->text('other_relevant_details')->nullable(); // For additional details
+
+            // Foreign key for games
+            $table->foreignId('game_id')->constrained('games');
+
             $table->timestamps();
         });
     }

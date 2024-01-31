@@ -4,11 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class SystemRole extends Model
+class Place extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
 
     /**
      * The attributes that are mass assignable.
@@ -17,13 +16,17 @@ class SystemRole extends Model
      */
     protected $fillable = [
         'name',
+        'address',
+        'capacity',
+        'other_relevant_details',
+        'game_id',
     ];
 
     /**
-     * The users that belong to the systemrole.
+     * Get the game that the place is associated with.
      */
-    public function users()
+    public function game()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsTo(Game::class);
     }
 }
