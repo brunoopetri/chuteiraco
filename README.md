@@ -24,9 +24,9 @@
 
 * User: Refers to the individual who will use the application to schedule soccer matches.
 
-* Player: Refers to the individual who will participate in the soccer match.
+* Group: Refers to the individuals who will participate in the soccer match.
 
-* Match: Refers to the soccer match that will be scheduled through the application.
+* Game: Refers to the soccer match that will be scheduled through the application.
 
 * Location: Refers to the place where the soccer match will take place.
 
@@ -36,7 +36,7 @@
 
 * A user can register as a player.
 
-* A player can participate in a match.
+* A player from the group can join a match.
 
 * A match can be scheduled at a location.
 

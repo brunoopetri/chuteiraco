@@ -22,6 +22,9 @@ return new class extends Migration
             $table->foreignId('game_id')->constrained('games');
 
             $table->timestamps();
+
+            // Soft Deletes
+            $table->softDeletes();
         });
     }
 
