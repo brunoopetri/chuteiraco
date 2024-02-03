@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Game extends Model
+class Position extends Model
 {
     use HasFactory, SoftDeletes;
 
@@ -16,10 +16,7 @@ class Game extends Model
      * @var array
      */
     protected $fillable = [
-        'date',
-        'start_time',
-        'end_time',
-        'status',
+        'position_name',
     ];
 
     /**
@@ -30,23 +27,7 @@ class Game extends Model
     protected $dates = ['deleted_at'];
 
     /**
-     * Get the places associated with the game.
-     */
-    public function places()
-    {
-        return $this->hasMany(Place::class);
-    }
-
-    /**
-     * The teams that belong to the game.
-     */
-    public function teams()
-    {
-        return $this->belongsToMany(Team::class);
-    }
-
-    /**
-     * The teams that belong to the group.
+     * The groups that belong to the position.
      */
     public function groups()
     {

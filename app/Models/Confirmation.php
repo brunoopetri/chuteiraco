@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class SystemRole extends Model
+class Confirmation extends Model
 {
     use HasFactory, SoftDeletes;
 
@@ -15,9 +15,7 @@ class SystemRole extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'name',
-    ];
+    protected $fillable = ['confirmation_status'];
 
     /**
      * The attributes that should be mutated to dates.
@@ -27,10 +25,10 @@ class SystemRole extends Model
     protected $dates = ['deleted_at'];
 
     /**
-     * The users that belong to the systemrole.
+     * Get the users associated with the confirmation.
      */
     public function users()
     {
-        return $this->belongsToMany(User::class);
+        return $this->hasMany(User::class);
     }
 }

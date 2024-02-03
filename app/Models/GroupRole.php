@@ -20,6 +20,13 @@ class GroupRole extends Model
     ];
 
     /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = ['deleted_at'];
+
+    /**
      * Get the users associated with the grouprole.
      */
     public function users()

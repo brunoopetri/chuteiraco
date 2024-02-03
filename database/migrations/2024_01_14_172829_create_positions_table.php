@@ -16,6 +16,9 @@ return new class extends Migration
             $table->id();
             $table->string('position_name');
             $table->timestamps();
+
+            // Soft Deletes
+            $table->softDeletes();
         });
 
          // Insert initial data

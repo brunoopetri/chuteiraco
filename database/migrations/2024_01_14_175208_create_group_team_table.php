@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('group_team', function (Blueprint $table) { 
             $table->id();
-            $table->boolean('confirmation_status');
             
-            // Foreign key for player_systemrole
+            
+            // Foreign key for groups
             $table->foreignId('group_id')->constrained('groups');
             
             // Foreign key for teams

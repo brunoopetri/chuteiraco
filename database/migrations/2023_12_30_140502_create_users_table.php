@@ -33,6 +33,9 @@ return new class extends Migration
             // Foreign key for grouproles
             $table->foreignId('grouprole_id')->constrained('grouproles');
 
+            // Foreign key for confirmations
+            $table->foreignId('confirmation_id')->constrained('confirmations');
+
             // Timestamps for created_at and updated_at
             $table->timestamps();
 

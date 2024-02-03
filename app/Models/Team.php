@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class SystemRole extends Model
+class Team extends Model
 {
     use HasFactory, SoftDeletes;
 
@@ -17,6 +17,8 @@ class SystemRole extends Model
      */
     protected $fillable = [
         'name',
+        'color',
+        'score',
     ];
 
     /**
@@ -27,10 +29,10 @@ class SystemRole extends Model
     protected $dates = ['deleted_at'];
 
     /**
-     * The users that belong to the systemrole.
+     * The games that belong to the team.
      */
-    public function users()
+    public function games()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(Game::class);
     }
 }

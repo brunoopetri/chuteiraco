@@ -45,11 +45,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = ['deleted_at'];
     
     /**
      * Get the system roles associated with the user.
      */
-    public function systemRoles()
+    public function systemroles()
     {
         return $this->belongsToMany(SystemRole::class);
     }
@@ -76,5 +83,13 @@ class User extends Authenticatable
     public function grouprole()
     {
         return $this->belongsTo(GroupRole::class);
+    }
+
+    /**
+     * Get the confirmation associated with the user.
+     */
+    public function confirmation()
+    {
+        return $this->belongsTo(Confirmation::class);
     }
 }
